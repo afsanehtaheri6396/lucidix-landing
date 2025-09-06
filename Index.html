@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucidix Inc. - Programming Biology. Precisely.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="deepseek_svg_20250705_d9a3f0.png">
+    <style>
+        :root {
+            --cyan: #06b6d4;
+            --cyan-dark: #0891b2;
+            --deep-blue: #0f172a;
+            --violet: #8b5cf6;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, var(--deep-blue) 0%, var(--slate-900) 100%);
+            color: var(--slate-50);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 20px 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--slate-50);
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--slate-100);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--cyan);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--cyan) 0%, var(--violet) 100%);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--slate-100);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(120deg, var(--deep-blue) 0%, var(--cyan) 30%, var(--violet) 70%, var(--deep-blue) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            position: relative;
+            text-align: center;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-logo img {
+            height: 100px;
+            width: auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--slate-50) 0%, var(--cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--slate-200);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--slate-300);
+            margin-bottom: 40px;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .module-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+        }
+
+        .module-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--cyan);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--slate-50) 0%, var(--cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            color: var(--slate-300);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .mission-statement {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 4px solid var(--cyan);
+        }
+
+        .patent-timeline {
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .timeline-year {
+            background: var(--cyan);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-right: 15px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* Technology Section */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .tech-card h3 {
+            color: var(--cyan);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Patents Section */
+        .patent-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border-top: 4px solid var(--violet);
+        }
+
+        .category-card h3 {
+            color: var(--violet);
+            margin-bottom: 20px;
+        }
+
+        .patent-list {
+            list-style: none;
+        }
+
+        .patent-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .patent-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Pipeline Section */
+        .roadmap {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cyan) 0%, var(--violet) 100%);
+            z-index: 1;
+        }
+
+        .roadmap-phase {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 30%;
+        }
+
+        .phase-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--deep-blue);
+            border: 4px solid var(--cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: var(--cyan);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .contact-methods {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .contact-methods li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-methods i {
+            width: 30px;
+            color: var(--cyan);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--slate-100);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--cyan);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--slate-900);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .footer-logo img {
+            height: 30px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .roadmap {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .roadmap::before {
+                display: none;
+            }
+            
+            .roadmap-phase {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .patent-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .logo-img {
+                height: 32px;
+            }
+            
+            .hero-logo img {
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <img src="deepseek_svg_20250705_d9a3f0.png" alt="Lucidix Logo" class="logo-img">
+                    <span>Lucidix</span>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#patents">Patents</a></li>
+                        <li><a href="#pipeline">Pipeline</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="deepseek_svg_20250705_d9a3f0.png" alt="Lucidix Logo">
+                </div>
+                <h1>Programming Biology. Precisely.</h1>
+                <p class="hero-tagline">Lucidix Inc. – Building the Operating System of Living Cells</p>
+                <p class="hero-subtitle">From diagnostics to theranostics, we engineer biology with precision.</p>
+                
+                <div class="module-grid">
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h3>LucID-Core</h3>
+                        <p>Light-free proximity labeling platform</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3>LuxArba</h3>
+                        <p>Autonomous cancer vaccine platform</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-egg"></i>
+                        </div>
+                        <h3>OvaSense</h3>
+                        <p>Precision fertility diagnostics</p>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>NeuroTrace</h3>
+                        <p>Neural pathway mapping technology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Lucidix</h2>
+                <p class="section-subtitle">Redefining medicine by merging synthetic biology, AI, and theranostics</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="mission-statement">
+                    <h3>Our Mission</h3>
+                    <p>Lucidix is pioneering the development of autonomous biological systems that precisely diagnose and treat disease without external intervention. Our light-free, AI-enhanced platforms represent a paradigm shift in how we interact with living systems.</p>
+                </div>
+                
+                <div class="founder-note">
+                    <h3>Founder's Vision</h3>
+                    <p>"We're building the missing operating system for biology—a world where cellular functions can be programmed with the precision of software updates. Our technology enables real-time diagnostics and targeted interventions at the molecular level."</p>
+                    <p>- Afsaneh Taheri Kal-Koshvandi, Founder & CEO</p>
+                </div>
+            </div>
+            
+            <div class="patent-timeline">
+                <h3>Innovation Timeline</h3>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025</span>
+                    <span>Initial LucID-Core patent filed</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025</span>
+                    <span>5 additional patents across therapeutic areas (provisional filing)</span>
+                </div>
+                <div class="timeline-year">2025</span>
+                    <span>12 patents covering platform technologies (provisional filing)</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025</span>
+                    <span>18+ patents establishing comprehensive IP protection (provisional filing)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="technology">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technology Modules</h2>
+                <p class="section-subtitle">Our platform of modular, interoperable technologies</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>LucID-Core™</h3>
+                    <p>The foundation of our platform—a light-free proximity labeling system that enables deep-tissue protein interaction mapping without external illumination.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>LuxArba™</h3>
+                    <p>Autonomous cancer vaccine platform that generates patient-specific neoantigens in response to tumor microenvironment signals.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>OvaSense™</h3>
+                    <p>Precision fertility monitoring system that provides real-time hormonal mapping with ±3-hour ovulation prediction accuracy.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>LucID-Vax™</h3>
+                    <p>Next-generation vaccine platform with built-in quality assurance and real-time efficacy monitoring.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>NeuroTrace™</h3>
+                    <p>Neural pathway mapping technology for precision neuroscience research and neurodegenerative disease treatment.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>SmartDegron™</h3>
+                    <p>Controlled protein degradation system for safety and temporal control of therapeutic interventions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patents Section -->
+    <section id="patents" class="patents">
+        <div class="container">
+            <div class="section-title">
+                <h2>Patent Portfolio</h2>
+                <p class="section-subtitle">18+ patents protecting our platform technologies (provisional filing in 2025)</p>
+            </div>
+            
+            <div class="patent-categories">
+                <div class="category-card">
+                    <h3>Cancer Theranostics</h3>
+                    <ul class="patent-list">
+                        <li>LucID-Core: Light-free proximity labeling</li>
+                        <li>LuxArba: Autonomous cancer vaccine platform</li>
+                        <li>Checkpoint LucID: Immune modulation technology</li>
+                        <li>TumorTrace: Precision cancer mapping</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <h3>Fertility Solutions</h3>
+                    <ul class="patent-list">
+                        <li>OvaSense: Hormonal mapping system</li>
+                        <li>FollicleTrack: Ovarian follicle monitoring</li>
+                        <li>EmbryoGuard: IVF quality assurance</li>
+                        <li>CycleSync: Precision cycle prediction</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <h3>Smart Vaccines</h3>
+                    <ul class="patent-list">
+                        <li>LucID-Vax: Self-validating vaccine platform</li>
+                        <li>ResponseTrack: Real-time immunity monitoring</li>
+                        <li>VectorFree: Non-viral delivery system</li>
+                        <li>TempStable: Thermostable formulation technology</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <h3>Neuro & Autoimmune</h3>
+                    <ul class="patent-list">
+                        <li>NeuroTrace: Neural pathway mapping</li>
+                        <li>SynapseID: Synaptic connection labeling</li>
+                        <li>ImmuneBalance: Autoimmune regulation</li>
+                        <li>BloodBrainPass: CNS delivery technology</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pipeline Section -->
+    <section id="pipeline" class="pipeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>Development Pipeline</h2>
+                <p class="section-subtitle">Strategic roadmap from research to commercialization</p>
+            </div>
+            
+            <div class="roadmap">
+                <div class="roadmap-phase">
+                    <div class="phase-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Preclinical (2025–2026)</h3>
+                    <p>OvaSense PoC completion</p>
+                    <p>LuxArba in vitro validation</p>
+                    <p>IND-enabling studies</p>
+                </div>
+                
+                <div class="roadmap-phase">
+                    <div class="phase-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Clinical (2027–2028)</h3>
+                    <p>Phase I–II trials</p>
+                    <p>First-in-human studies</p>
+                    <p>Partnership expansion</p>
+                </div>
+                
+                <div class="roadmap-phase">
+                    <div class="phase-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Commercial (2029+)</h3>
+                    <p>Diagnostics launch</p>
+                    <p>Therapeutics approval</p>
+                    <p>Platform licensing</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3>Let's Collaborate</h3>
+                <p>We're seeking strategic partnerships to accelerate development and commercialization.</p>
+                <p>Contact us at <a href="mailto:afsanehtaheri6396@gmail.com" style="color: var(--cyan);">afsanehtaheri6396@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p class="section-subtitle">Get in touch to explore collaboration opportunities</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <ul class="contact-methods">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>afsanehtaheri6396@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Tehran, Iran</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+98 930 852 0957</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div style="margin-bottom: 20px;">
+                            <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.5); color: white;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.5); color: white;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.5); color: white;"></textarea>
+                        </div>
+                        <button type="submit" style="background: linear-gradient(90deg, var(--cyan) 0%, var(--violet) 100%); color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; cursor: pointer;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="deepseek_svg_20250705_d9a3f0.png" alt="Lucidix Logo" class="logo-img">
+                    <span>Lucidix Inc.</span>
+                </div>
+                
+                <div>
+                    <p>© 2025 Lucidix Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
