@@ -974,7 +974,7 @@
                     </div>
                     
                     <div class="founder-links">
-                        <a href="CV_Afsaneh Taheri Kal Koshvandi.pdf" class="btn" download>Download Full CV</a>
+                        <a href="#" class="btn" id="downloadCV">Download Full CV</a>
                         <a href="https://www.linkedin.com/in/afsaneh-taheri-kal-koshvandi-95ba93187/" class="btn btn-outline" target="_blank">LinkedIn Profile</a>
                     </div>
                 </div>
@@ -1161,7 +1161,7 @@
             <div style="text-align: center; margin-top: 50px;">
                 <h3>Let's Collaborate</h3>
                 <p>We're seeking strategic partnerships to accelerate development and commercialization.</p>
-                <p>Contact us at <a href="mailto:founder@lucidix.inc" style="color: var(--cyan);">founder@lucidix.inc</a></p>
+                <p>Contact us at <a href="mailto:founder@lucidixinc.com" style="color: var(--cyan);">founder@lucidixinc.com</a></p>
             </div>
         </div>
     </section>
@@ -1180,7 +1180,7 @@
                     <ul class="contact-methods">
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>founder@lucidix.inc</span>
+                            <span>founder@lucidixinc.com</span>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
@@ -1288,7 +1288,7 @@
             const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
             
             // Open email client
-            window.location.href = `mailto:founder@lucidix.inc?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = `mailto:founder@lucidixinc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             
             // Show success message
             const successMessage = document.getElementById('formSuccess');
@@ -1301,6 +1301,24 @@
             setTimeout(function() {
                 successMessage.style.display = 'none';
             }, 5000);
+        });
+
+        // CV Download Handling
+        document.getElementById('downloadCV').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create a temporary link to download the CV
+            const link = document.createElement('a');
+            link.href = 'CV_Afsaneh Taheri Kal Koshvandi.pdf';
+            link.download = 'CV_Afsaneh Taheri Kal Koshvandi.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show a message if download fails
+            setTimeout(function() {
+                alert('If the download does not start automatically, please right-click the link and select "Save link as..."');
+            }, 1000);
         });
     </script>
 </body>
