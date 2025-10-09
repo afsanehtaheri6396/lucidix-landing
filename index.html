@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucidix Inc. - Programming Biology. Precisely.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="deepseek_svg_20250705_d9a3f0.png">
+    <link rel="icon" type="image/png" href="Lucidix.logo.png">
     <style>
         :root {
             --cyan: #06b6d4;
@@ -43,6 +43,50 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Loading Animation */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--deep-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(6, 182, 212, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--cyan);
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
         }
 
         /* Header Styles */
@@ -260,6 +304,165 @@
             text-align: center;
         }
 
+        /* Founder Section */
+        .founder-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .founder-image {
+            text-align: center;
+        }
+
+        .founder-image img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .founder-bio h3 {
+            color: var(--cyan);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .founder-bio p {
+            margin-bottom: 15px;
+        }
+
+        .founder-achievements {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .achievement-item {
+            background: rgba(6, 182, 212, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .achievement-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--cyan);
+            margin-bottom: 5px;
+        }
+
+        .achievement-text {
+            font-size: 0.9rem;
+        }
+
+        .founder-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, var(--cyan) 0%, var(--violet) 100%);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(6, 182, 212, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--cyan);
+        }
+
+        /* LinkedIn Video Section */
+        .linkedin-video {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 450px;
+            background: rgba(15, 23, 42, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+        }
+
+        .video-placeholder i {
+            font-size: 4rem;
+            color: var(--cyan);
+            margin-bottom: 20px;
+        }
+
+        /* Publications Section */
+        .publications-list {
+            margin-top: 40px;
+        }
+
+        .publication-item {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--violet);
+            transition: all 0.3s;
+        }
+
+        .publication-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .publication-item h3 {
+            color: var(--cyan);
+            margin-bottom: 10px;
+        }
+
+        .publication-item p {
+            margin-bottom: 10px;
+        }
+
+        .publication-link {
+            color: var(--violet);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .publication-link:hover {
+            text-decoration: underline;
+        }
+
         /* Technology Section */
         .tech-grid {
             display: grid;
@@ -446,7 +649,8 @@
         /* Responsive Design */
         @media (max-width: 992px) {
             .about-content,
-            .contact-content {
+            .contact-content,
+            .founder-content {
                 grid-template-columns: 1fr;
             }
             
@@ -467,6 +671,18 @@
         @media (max-width: 768px) {
             nav ul {
                 display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(15, 23, 42, 0.95);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+            }
+            
+            nav ul.show {
+                display: flex;
             }
             
             .mobile-menu-btn {
@@ -505,16 +721,32 @@
             .hero-logo img {
                 height: 70px;
             }
+            
+            .founder-links {
+                flex-direction: column;
+            }
+            
+            .founder-achievements {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div id="loader">
+        <div class="loader-content">
+            <img src="Lucidix.logo.png" alt="Lucidix Logo" class="loader-logo">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <img src="deepseek_svg_20250705_d9a3f0.png" alt="Lucidix Logo" class="logo-img">
+                    <img src="Lucidix.logo.png" alt="Lucidix Logo" class="logo-img">
                     <span>Lucidix</span>
                 </a>
                 
@@ -522,7 +754,9 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="#founder">Founder</a></li>
                         <li><a href="#technology">Technology</a></li>
+                        <li><a href="#publications">Publications</a></li>
                         <li><a href="#patents">Patents</a></li>
                         <li><a href="#pipeline">Pipeline</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -541,7 +775,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-logo">
-                    <img src="deepseek_svg_20250705_d9a3f0.png" alt="Lucidix Logo">
+                    <img src="Lucidix.logo.png" alt="Lucidix Logo">
                 </div>
                 <h1>Programming Biology. Precisely.</h1>
                 <p class="hero-tagline">Lucidix Inc. – Building the Operating System of Living Cells</p>
@@ -615,12 +849,77 @@
                     <span class="timeline-year">2025</span>
                     <span>5 additional patents across therapeutic areas (provisional filing)</span>
                 </div>
-                <div class="timeline-year">2025</span>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025</span>
                     <span>12 patents covering platform technologies (provisional filing)</span>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">2025</span>
                     <span>18+ patents establishing comprehensive IP protection (provisional filing)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="founder" class="founder">
+        <div class="container">
+            <div class="section-title">
+                <h2>Founder & CEO</h2>
+                <p class="section-subtitle">Dr. Afsaneh Taheri Kal-Koshvandi - Inventor of Bioluminescence-based Proximity Labeling</p>
+            </div>
+            
+            <div class="founder-content">
+                <div class="founder-image">
+                    <!-- Placeholder for founder image - replace with actual image -->
+                    <img src="https://via.placeholder.com/300x400/0f172a/06b6d4?text=Dr.+Afsaneh+Taheri+Kal-Koshvandi" alt="Dr. Afsaneh Taheri Kal-Koshvandi">
+                </div>
+                <div class="founder-bio">
+                    <h3>Pioneering Synthetic Biology</h3>
+                    <p>Dr. Afsaneh Taheri Kal-Koshvandi is the visionary founder and CEO of Lucidix Inc., with extensive expertise in synthetic biology, proximity labeling technologies, and therapeutic development. Her groundbreaking research has led to the invention of <strong>Bioluminescence-based Proximity Labeling</strong>, a revolutionary technology that eliminates the need for external light sources and enables deep-tissue proteomic interrogation.</p>
+                    <p>With a strong background in molecular biology and biotechnology, Dr. Taheri has dedicated her career to developing novel approaches for precise biological engineering. Her work on light-free proximity labeling systems represents a significant advancement in the field, enabling applications previously not possible with conventional methods.</p>
+                    <p>Under her leadership, Lucidix has rapidly expanded its intellectual property portfolio with 18+ patent families and is positioned to transform multiple therapeutic areas through its modular technology platform.</p>
+                    
+                    <div class="founder-achievements">
+                        <div class="achievement-item">
+                            <div class="achievement-number">18+</div>
+                            <div class="achievement-text">Patent Families</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">3</div>
+                            <div class="achievement-text">Preprints Published</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">5+</div>
+                            <div class="achievement-text">Years Experience</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">1st</div>
+                            <div class="achievement-text">Inventor of Light-Free Proximity Labeling</div>
+                        </div>
+                    </div>
+                    
+                    <div class="founder-links">
+                        <a href="CV_Afsaneh Taheri Kal Koshvandi.pdf" class="btn" download>Download Full CV</a>
+                        <a href="https://www.linkedin.com/in/afsaneh-taheri-kal-koshvandi-95ba93187/" class="btn btn-outline" target="_blank">LinkedIn Profile</a>
+                        <a href="Research Statement – Afsaneh Taheri Kal Koshvandi.pdf" class="btn btn-outline" download>Research Statement</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- LinkedIn Video Section -->
+            <div class="linkedin-video">
+                <h3>Company Overview</h3>
+                <p>Watch our introduction video from LinkedIn</p>
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <i class="fab fa-linkedin"></i>
+                        <p>LinkedIn Company Video</p>
+                        <p><a href="https://www.linkedin.com/company/lucidix-inc/" style="color: var(--cyan);" target="_blank">View on LinkedIn</a></p>
+                    </div>
+                    <!-- If you have the actual embed code for the LinkedIn video, replace the placeholder with:
+                    <iframe src="YOUR_LINKEDIN_VIDEO_EMBED_URL" frameborder="0" allowfullscreen></iframe>
+                    -->
                 </div>
             </div>
         </div>
@@ -663,6 +962,35 @@
                 <div class="tech-card">
                     <h3>SmartDegron™</h3>
                     <p>Controlled protein degradation system for safety and temporal control of therapeutic interventions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Publications</h2>
+                <p class="section-subtitle">Our groundbreaking research in synthetic biology and theranostics</p>
+            </div>
+            
+            <div class="publications-list">
+                <div class="publication-item">
+                    <h3>Taheri Kal-Koshvandi, A. (2025).</h3>
+                    <p>LucID: A Self-Activating Bioluminescent Biotin Ligase for Light-Free Proximity Labeling in Deep Tissues. <em>bioRxiv</em>, 2025-06.</p>
+                    <a href="https://doi.org/10.1101/2025.06.10.658826" class="publication-link" target="_blank">https://doi.org/10.1101/2025.06.10.658826</a>
+                </div>
+                
+                <div class="publication-item">
+                    <h3>Kal-Koshvandi, A. T. (2025).</h3>
+                    <p>Quintuple BRET Platform for Light-Free, Compartment-Resolved Proximity Proteomics in Neurons.</p>
+                </div>
+                
+                <div class="publication-item">
+                    <h3>Kal-Koshvandi, A. T. (2025).</h3>
+                    <p>Original Development and Prior Disclosure of a Bioluminescence-Activated Proximity Labeling Platform Using Luciferase–Photosensitizer Conjugates (Documenting Scientific Priority and IP Ownership by Dr. Afsaneh Taheri Kal-Koshvandi).</p>
+                    <a href="https://doi.org/10.5281/zenodo.15554676" class="publication-link" target="_blank">https://doi.org/10.5281/zenodo.15554676</a>
                 </div>
             </div>
         </div>
@@ -763,7 +1091,7 @@
             <div style="text-align: center; margin-top: 50px;">
                 <h3>Let's Collaborate</h3>
                 <p>We're seeking strategic partnerships to accelerate development and commercialization.</p>
-                <p>Contact us at <a href="mailto:afsanehtaheri6396@gmail.com" style="color: var(--cyan);">afsanehtaheri6396@gmail.com</a></p>
+                <p>Contact us at <a href="mailto:founder@lucidixinc.com" style="color: var(--cyan);">founder@lucidixinc.com</a></p>
             </div>
         </div>
     </section>
@@ -782,11 +1110,11 @@
                     <ul class="contact-methods">
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>afsanehtaheri6396@gmail.com</span>
+                            <span>founder@lucidixinc.com</span>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Tehran, Iran</span>
+                            <span>Delaware, USA</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -795,7 +1123,7 @@
                     </ul>
                     
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/company/lucidix-inc/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-researchgate"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
@@ -804,15 +1132,15 @@
                 
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
-                    <form>
+                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
                         <div style="margin-bottom: 20px;">
-                            <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.5); color: white;">
+                            <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.5); color: white;">
                         </div>
                         <div style="margin-bottom: 20px;">
-                            <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.5); color: white;">
+                            <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.5); color: white;">
                         </div>
                         <div style="margin-bottom: 20px;">
-                            <textarea placeholder="Your Message" rows="5" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.5); color: white;"></textarea>
+                            <textarea name="message" placeholder="Your Message" rows="5" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(15,23,42,0.5); color: white;"></textarea>
                         </div>
                         <button type="submit" style="background: linear-gradient(90deg, var(--cyan) 0%, var(--violet) 100%); color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; cursor: pointer;">Send Message</button>
                     </form>
@@ -826,7 +1154,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="deepseek_svg_20250705_d9a3f0.png" alt="Lucidix Logo" class="logo-img">
+                    <img src="Lucidix.logo.png" alt="Lucidix Logo" class="logo-img">
                     <span>Lucidix Inc.</span>
                 </div>
                 
@@ -838,10 +1166,18 @@
     </footer>
 
     <script>
-        // Simple JavaScript for mobile menu toggle
+        // Loading Animation
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            setTimeout(function() {
+                loader.classList.add('loader-hidden');
+            }, 1000);
+        });
+
+        // Mobile Menu Toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             const nav = document.querySelector('nav ul');
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            nav.classList.toggle('show');
         });
         
         // Smooth scrolling for navigation links
@@ -852,11 +1188,21 @@
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 
+                // Close mobile menu if open
+                document.querySelector('nav ul').classList.remove('show');
+                
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Form will be submitted to Formspree
+            // You need to replace 'your-form-id' with your actual Formspree form ID
+            // Formspree will then forward the message to your email
         });
     </script>
 </body>
