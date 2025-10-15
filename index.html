@@ -4,7 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucidix Inc. - Programming Biology. Precisely.</title>
+    <meta name="description" content="Lucidix Inc. - Building the Operating System of Living Cells. From diagnostics to theranostics, we engineer biology with precision.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Lucidix Inc. - Programming Biology. Precisely">
+    <meta property="og:description" content="Building the Operating System of Living Cells. From diagnostics to theranostics, we engineer biology with precision.">
+    <meta property="og:image" content="1000044039.jpg">
+    <meta property="og:url" content="https://lucidixinc.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Lucidix Inc.",
+      "url": "https://lucidixinc.com",
+      "logo": "1000044039.jpg",
+      "description": "Lucidix Inc. - Building the Operating System of Living Cells. From diagnostics to theranostics, we engineer biology with precision.",
+      "sameAs": [
+        "https://www.linkedin.com/company/lucidix-inc/",
+        "https://twitter.com/AfsanehTaheri96",
+        "https://www.researchgate.net/profile/Afsaneh-Taheri-Kal-Koshvandi"
+      ]
+    }
+    </script>
+    
     <style>
         :root {
             --cyan: #06b6d4;
@@ -646,33 +672,14 @@
         }
 
         /* Logo Styles */
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            line-height: 1;
-            color: var(--cyan);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .logo-img {
+            height: 50px;
+            width: auto;
         }
 
-        .logo-text .main {
-            font-size: 1.5em;
-        }
-
-        .logo-text .sub {
-            font-size: 0.7em;
-            color: var(--slate-300);
-        }
-
-        .hero-logo .logo-text .main {
-            font-size: 3em;
-        }
-
-        .hero-logo .logo-text .sub {
-            font-size: 1em;
+        .hero-logo img {
+            height: 120px;
+            width: auto;
         }
 
         /* Form Styles */
@@ -802,10 +809,7 @@
     <!-- Loading Animation -->
     <div id="loader">
         <div class="loader-content">
-            <div class="logo-text">
-                <div class="main">LUCIDIX</div>
-                <div class="sub">INCORPORATED</div>
-            </div>
+            <img src="1000044039.jpg" alt="Lucidix Logo" class="loader-logo">
             <div class="loader-spinner"></div>
         </div>
     </div>
@@ -815,10 +819,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <div class="logo-text">
-                        <div class="main">LUCIDIX</div>
-                        <div class="sub">INCORPORATED</div>
-                    </div>
+                    <img src="1000044039.jpg" alt="Lucidix Logo" class="logo-img">
                 </a>
                 
                 <nav>
@@ -846,10 +847,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-logo">
-                    <div class="logo-text">
-                        <div class="main">LUCIDIX</div>
-                        <div class="sub">INCORPORATED</div>
-                    </div>
+                    <img src="1000044039.jpg" alt="Lucidix Logo">
                 </div>
                 <h1>Programming Biology. Precisely.</h1>
                 <p class="hero-tagline">Lucidix Inc. – Building the Operating System of Living Cells</p>
@@ -974,7 +972,12 @@
                     </div>
                     
                     <div class="founder-links">
-                        <a href="#" class="btn" id="downloadCV">Download Full CV</a>
+                        <!-- روش ۱: فایل در همان پوشه -->
+                        <a href="CV_Afsaneh_Taheri_Kal_Koshvandi.pdf" class="btn" download>Download Full CV</a>
+                        
+                        <!-- روش ۲: لینک مستقیم به فایل در گیت‌هاب -->
+                        <!-- <a href="https://raw.githubusercontent.com/yourusername/yourrepository/main/CV_Afsaneh_Taheri_Kal_Koshvandi.pdf" class="btn" download>Download Full CV</a> -->
+                        
                         <a href="https://www.linkedin.com/in/afsaneh-taheri-kal-koshvandi-95ba93187/" class="btn btn-outline" target="_blank">LinkedIn Profile</a>
                     </div>
                 </div>
@@ -1194,8 +1197,8 @@
                     
                     <div class="social-links">
                         <a href="https://www.linkedin.com/company/lucidix-inc/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://x.com/AfsanehTaheri96?t=ehl2mJSl6OQMb6Gip-MJ5Q&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.researchgate.net/profile/Afsaneh-Taheri-Kal-Koshvandi" target="_blank"><i class="fab fa-researchgate"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
@@ -1227,10 +1230,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <div class="logo-text">
-                        <div class="main">LUCIDIX</div>
-                        <div class="sub">INCORPORATED</div>
-                    </div>
+                    <img src="1000044039.jpg" alt="Lucidix Logo" class="logo-img">
+                    <span>Lucidix Inc.</span>
                 </div>
                 
                 <div>
@@ -1301,24 +1302,6 @@
             setTimeout(function() {
                 successMessage.style.display = 'none';
             }, 5000);
-        });
-
-        // CV Download Handling
-        document.getElementById('downloadCV').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Create a temporary link to download the CV
-            const link = document.createElement('a');
-            link.href = 'CV_Afsaneh Taheri Kal Koshvandi.pdf';
-            link.download = 'CV_Afsaneh Taheri Kal Koshvandi.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Show a message if download fails
-            setTimeout(function() {
-                alert('If the download does not start automatically, please right-click the link and select "Save link as..."');
-            }, 1000);
         });
     </script>
 </body>
