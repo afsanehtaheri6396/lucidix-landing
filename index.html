@@ -10,7 +10,6 @@
     <!-- SEO Meta Tags -->
     <meta property="og:title" content="Lucidix Inc. - Programming Biology. Precisely">
     <meta property="og:description" content="Building the Operating System of Living Cells. From diagnostics to theranostics, we engineer biology with precision.">
-    <meta property="og:image" content="1000044039.jpg">
     <meta property="og:url" content="https://lucidixinc.com">
     <meta name="twitter:card" content="summary_large_image">
     
@@ -21,7 +20,6 @@
       "@type": "Organization",
       "name": "Lucidix Inc.",
       "url": "https://lucidixinc.com",
-      "logo": "1000044039.jpg",
       "description": "Lucidix Inc. - Building the Operating System of Living Cells. From diagnostics to theranostics, we engineer biology with precision.",
       "sameAs": [
         "https://www.linkedin.com/company/lucidix-inc/",
@@ -144,6 +142,12 @@
         .logo-img {
             height: 40px;
             width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.5));
         }
 
         nav ul {
@@ -216,8 +220,14 @@
         }
 
         .hero-logo img {
-            height: 100px;
+            height: 120px;
             width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .hero-logo img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.7));
         }
 
         .hero h1 {
@@ -671,15 +681,34 @@
             margin-right: 10px;
         }
 
-        /* Logo Styles */
-        .logo-img {
-            height: 50px;
-            width: auto;
+        /* Text Logo Fallback */
+        .text-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            line-height: 1;
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .hero-logo img {
-            height: 120px;
-            width: auto;
+        .text-logo .main {
+            font-size: 1.5em;
+        }
+
+        .text-logo .sub {
+            font-size: 0.7em;
+            color: var(--slate-300);
+        }
+
+        .hero-logo .text-logo .main {
+            font-size: 3em;
+        }
+
+        .hero-logo .text-logo .sub {
+            font-size: 1em;
         }
 
         /* Form Styles */
@@ -792,7 +821,7 @@
             }
             
             .hero-logo img {
-                height: 70px;
+                height: 80px;
             }
             
             .founder-links {
@@ -809,7 +838,12 @@
     <!-- Loading Animation -->
     <div id="loader">
         <div class="loader-content">
-            <img src="1000044039.jpg" alt="Lucidix Logo" class="loader-logo">
+            <!-- Logo image for loader -->
+            <img src="lucidix-logo.png" alt="Lucidix Logo" class="loader-logo" onerror="this.style.display='none';">
+            <div class="text-logo">
+                <div class="main">LUCIDIX</div>
+                <div class="sub">INCORPORATED</div>
+            </div>
             <div class="loader-spinner"></div>
         </div>
     </div>
@@ -819,7 +853,12 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <img src="1000044039.jpg" alt="Lucidix Logo" class="logo-img">
+                    <!-- Logo image for header -->
+                    <img src="lucidix-logo.png" alt="Lucidix Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('header-text-logo').style.display='flex';">
+                    <div id="header-text-logo" class="text-logo" style="display: none;">
+                        <div class="main">LUCIDIX</div>
+                        <div class="sub">INCORPORATED</div>
+                    </div>
                 </a>
                 
                 <nav>
@@ -847,7 +886,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-logo">
-                    <img src="1000044039.jpg" alt="Lucidix Logo">
+                    <!-- Logo image for hero section -->
+                    <img src="lucidix-logo.png" alt="Lucidix Logo" onerror="this.style.display='none'; document.getElementById('hero-text-logo').style.display='flex';">
+                    <div id="hero-text-logo" class="text-logo" style="display: none;">
+                        <div class="main">LUCIDIX</div>
+                        <div class="sub">INCORPORATED</div>
+                    </div>
                 </div>
                 <h1>Programming Biology. Precisely.</h1>
                 <p class="hero-tagline">Lucidix Inc. – Building the Operating System of Living Cells</p>
@@ -972,7 +1016,7 @@
                     </div>
                     
                     <div class="founder-links">
-                        <a href="CV_Afsaneh_Taheri_Kal_Koshvandi.pdf" class="btn" download>Download Full CV</a>
+                        <a href="#" class="btn" id="downloadCV">Download Full CV</a>
                         <a href="https://www.linkedin.com/in/afsaneh-taheri-kal-koshvandi-95ba93187/" class="btn btn-outline" target="_blank">LinkedIn Profile</a>
                     </div>
                 </div>
@@ -1225,7 +1269,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="1000044039.jpg" alt="Lucidix Logo" class="logo-img">
+                    <!-- Logo image for footer -->
+                    <img src="lucidix-logo.png" alt="Lucidix Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('footer-text-logo').style.display='flex';">
+                    <div id="footer-text-logo" class="text-logo" style="display: none;">
+                        <div class="main">LUCIDIX</div>
+                        <div class="sub">INCORPORATED</div>
+                    </div>
                     <span>Lucidix Inc.</span>
                 </div>
                 
@@ -1297,6 +1346,39 @@
             setTimeout(function() {
                 successMessage.style.display = 'none';
             }, 5000);
+        });
+
+        // CV Download Handling
+        document.getElementById('downloadCV').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create a temporary link to download the CV
+            const link = document.createElement('a');
+            link.href = 'CV_Afsaneh Taheri Kal Koshvandi.pdf';
+            link.download = 'CV_Afsaneh Taheri Kal Koshvandi.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show a message if download fails
+            setTimeout(function() {
+                alert('If the download does not start automatically, please right-click the link and select "Save link as..."');
+            }, 1000);
+        });
+
+        // Check if logo images loaded successfully
+        window.addEventListener('load', function() {
+            const logoImages = document.querySelectorAll('img[src="lucidix-logo.png"]');
+            logoImages.forEach(img => {
+                if (!img.complete || img.naturalHeight === 0) {
+                    // Image failed to load
+                    img.style.display = 'none';
+                    const textLogo = document.getElementById(img.id.replace('img', 'text-logo'));
+                    if (textLogo) {
+                        textLogo.style.display = 'flex';
+                    }
+                }
+            });
         });
     </script>
 </body>
