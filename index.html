@@ -7,30 +7,6 @@
     <meta name="description" content="Lucidix Inc. - Building the Operating System of Living Cells. From diagnostics to theranostics, we engineer biology with precision.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- SEO Meta Tags -->
-    <meta property="og:title" content="Lucidix Inc. - Programming Biology. Precisely">
-    <meta property="og:description" content="Building the Operating System of Living Cells. From diagnostics to theranostics, we engineer biology with precision.">
-    <meta property="og:image" content="logo.svg">
-    <meta property="og:url" content="https://lucidixinc.com">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Structured Data for Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Lucidix Inc.",
-      "url": "https://lucidixinc.com",
-      "logo": "logo.svg",
-      "description": "Lucidix Inc. - Building the Operating System of Living Cells. From diagnostics to theranostics, we engineer biology with precision.",
-      "sameAs": [
-        "https://www.linkedin.com/company/lucidix-inc/",
-        "https://twitter.com/AfsanehTaheri96",
-        "https://www.researchgate.net/profile/Afsaneh-Taheri-Kal-Koshvandi"
-      ]
-    }
-    </script>
-    
     <style>
         :root {
             --cyan: #06b6d4;
@@ -141,7 +117,7 @@
             text-decoration: none;
         }
 
-        .logo-img {
+        .logo-svg {
             height: 40px;
             width: auto;
         }
@@ -215,7 +191,7 @@
             margin-bottom: 20px;
         }
 
-        .hero-logo img {
+        .hero-logo svg {
             height: 120px;
             width: auto;
         }
@@ -292,25 +268,461 @@
             margin: 0 auto;
         }
 
-        /* Logo Styles */
-        .logo-img {
-            height: 50px;
-            width: auto;
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
         }
 
-        .hero-logo img {
-            height: 120px;
-            width: auto;
+        .mission-statement {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 4px solid var(--cyan);
         }
 
-        .footer-logo img {
+        .patent-timeline {
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .timeline-year {
+            background: var(--cyan);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-right: 15px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* Founder Section */
+        .founder-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .founder-image {
+            text-align: center;
+        }
+
+        .founder-image img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .founder-bio h3 {
+            color: var(--cyan);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .founder-bio p {
+            margin-bottom: 15px;
+        }
+
+        .founder-achievements {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .achievement-item {
+            background: rgba(6, 182, 212, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .achievement-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--cyan);
+            margin-bottom: 5px;
+        }
+
+        .achievement-text {
+            font-size: 0.9rem;
+        }
+
+        .founder-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, var(--cyan) 0%, var(--violet) 100%);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(6, 182, 212, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--cyan);
+        }
+
+        /* CV Section */
+        .cv-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .cv-download-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid var(--cyan);
+        }
+
+        .cv-download-card h3 {
+            color: var(--cyan);
+            margin-bottom: 20px;
+        }
+
+        .cv-preview {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(6, 182, 212, 0.1);
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .cv-preview h4 {
+            color: var(--cyan);
+            margin-bottom: 10px;
+        }
+
+        .cv-preview ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .cv-preview li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .cv-preview li:before {
+            content: "•";
+            color: var(--cyan);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Technology Section */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .tech-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .tech-card h3 {
+            color: var(--cyan);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Publications Section */
+        .publications-list {
+            margin-top: 40px;
+        }
+
+        .publication-item {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--violet);
+            transition: all 0.3s;
+        }
+
+        .publication-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .publication-item h3 {
+            color: var(--cyan);
+            margin-bottom: 10px;
+        }
+
+        .publication-item p {
+            margin-bottom: 10px;
+        }
+
+        .publication-link {
+            color: var(--violet);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .publication-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Patents Section */
+        .patent-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border-top: 4px solid var(--violet);
+        }
+
+        .category-card h3 {
+            color: var(--violet);
+            margin-bottom: 20px;
+        }
+
+        .patent-list {
+            list-style: none;
+        }
+
+        .patent-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .patent-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Pipeline Section */
+        .roadmap {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cyan) 0%, var(--violet) 100%);
+            z-index: 1;
+        }
+
+        .roadmap-phase {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 30%;
+        }
+
+        .phase-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--deep-blue);
+            border: 4px solid var(--cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: var(--cyan);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .contact-methods {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .contact-methods li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-methods i {
+            width: 30px;
+            color: var(--cyan);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--slate-100);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--cyan);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--slate-900);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .footer-logo svg {
             height: 30px;
             width: auto;
         }
 
-        /* بقیه استایل‌ها مانند قبل باقی می‌مانند... */
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(15,23,42,0.5);
+            color: white;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-success {
+            display: none;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid var(--cyan);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
 
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content,
+            .founder-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .roadmap {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .roadmap::before {
+                display: none;
+            }
+            
+            .roadmap-phase {
+                width: 100%;
+            }
+        }
+
         @media (max-width: 768px) {
             nav ul {
                 display: none;
@@ -340,12 +752,37 @@
                 font-size: 1.2rem;
             }
             
-            .logo-img {
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .patent-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .logo-svg {
                 height: 35px;
             }
             
-            .hero-logo img {
+            .hero-logo svg {
                 height: 80px;
+            }
+            
+            .founder-links {
+                flex-direction: column;
+            }
+            
+            .founder-achievements {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -354,7 +791,34 @@
     <!-- Loading Animation -->
     <div id="loader">
         <div class="loader-content">
-            <img src="logo.svg" alt="Lucidix Logo" class="loader-logo">
+            <!-- SVG Logo Embedded Directly -->
+            <svg class="loader-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+                <defs>
+                    <linearGradient id="teal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#1DE9B6"/>
+                        <stop offset="100%" stop-color="#2AFC98"/>
+                    </linearGradient>
+                </defs>
+                
+                <!-- Mitochondrion Structure -->
+                <path d="M200,150 Q250,100 300,150 T400,150" fill="none" stroke="url(#teal-grad)" stroke-width="4"/>
+                <path d="M200,150 Q250,200 300,150 T400,150" fill="none" stroke="url(#teal-grad)" stroke-width="4"/>
+                
+                <!-- BRET Energy Rings -->
+                <circle cx="300" cy="150" r="40" fill="none" stroke="url(#teal-grad)" stroke-width="2" opacity="0.7">
+                    <animate attributeName="r" values="40;60;40" dur="2s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                
+                <!-- Synaptic Points -->
+                <circle cx="230" cy="150" r="8" fill="url(#teal-grad)"/>
+                <circle cx="370" cy="150" r="8" fill="url(#teal-grad)"/>
+                
+                <!-- Brand Text -->
+                <text x="300" y="250" text-anchor="middle" font-family="Arial" font-size="40" fill="#6E44FF">
+                    LUCIDIX
+                </text>
+            </svg>
             <div class="loader-spinner"></div>
         </div>
     </div>
@@ -364,7 +828,29 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">
-                    <img src="logo.svg" alt="Lucidix Logo" class="logo-img">
+                    <!-- SVG Logo Embedded Directly -->
+                    <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+                        <defs>
+                            <linearGradient id="teal-grad-header" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#1DE9B6"/>
+                                <stop offset="100%" stop-color="#2AFC98"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Mitochondrion Structure -->
+                        <path d="M200,150 Q250,100 300,150 T400,150" fill="none" stroke="url(#teal-grad-header)" stroke-width="4"/>
+                        <path d="M200,150 Q250,200 300,150 T400,150" fill="none" stroke="url(#teal-grad-header)" stroke-width="4"/>
+                        
+                        <!-- BRET Energy Rings -->
+                        <circle cx="300" cy="150" r="40" fill="none" stroke="url(#teal-grad-header)" stroke-width="2" opacity="0.7">
+                            <animate attributeName="r" values="40;60;40" dur="2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Synaptic Points -->
+                        <circle cx="230" cy="150" r="8" fill="url(#teal-grad-header)"/>
+                        <circle cx="370" cy="150" r="8" fill="url(#teal-grad-header)"/>
+                    </svg>
                 </a>
                 
                 <nav>
@@ -393,7 +879,34 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-logo">
-                    <img src="logo.svg" alt="Lucidix Logo">
+                    <!-- SVG Logo Embedded Directly -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+                        <defs>
+                            <linearGradient id="teal-grad-hero" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#1DE9B6"/>
+                                <stop offset="100%" stop-color="#2AFC98"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Mitochondrion Structure -->
+                        <path d="M200,150 Q250,100 300,150 T400,150" fill="none" stroke="url(#teal-grad-hero)" stroke-width="4"/>
+                        <path d="M200,150 Q250,200 300,150 T400,150" fill="none" stroke="url(#teal-grad-hero)" stroke-width="4"/>
+                        
+                        <!-- BRET Energy Rings -->
+                        <circle cx="300" cy="150" r="40" fill="none" stroke="url(#teal-grad-hero)" stroke-width="2" opacity="0.7">
+                            <animate attributeName="r" values="40;60;40" dur="2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Synaptic Points -->
+                        <circle cx="230" cy="150" r="8" fill="url(#teal-grad-hero)"/>
+                        <circle cx="370" cy="150" r="8" fill="url(#teal-grad-hero)"/>
+                        
+                        <!-- Brand Text -->
+                        <text x="300" y="250" text-anchor="middle" font-family="Arial" font-size="40" fill="white">
+                            LUCIDIX
+                        </text>
+                    </svg>
                 </div>
                 <h1>Programming Biology. Precisely.</h1>
                 <p class="hero-tagline">Lucidix Inc. – Building the Operating System of Living Cells</p>
@@ -436,14 +949,380 @@
         </div>
     </section>
 
-    <!-- بقیه بخش‌های سایت مانند قبل باقی می‌مانند... -->
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Lucidix</h2>
+                <p class="section-subtitle">Redefining medicine by merging synthetic biology, AI, and theranostics</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="mission-statement">
+                    <h3>Our Mission</h3>
+                    <p>Lucidix is pioneering the development of autonomous biological systems that precisely diagnose and treat disease without external intervention. Our light-free, AI-enhanced platforms represent a paradigm shift in how we interact with living systems.</p>
+                </div>
+                
+                <div class="founder-note">
+                    <h3>Founder's Vision</h3>
+                    <p>"We're building the missing operating system for biology—a world where cellular functions can be programmed with the precision of software updates. Our technology enables real-time diagnostics and targeted interventions at the molecular level."</p>
+                    <p>- Afsaneh Taheri Kal-Koshvandi, Founder & CEO</p>
+                </div>
+            </div>
+            
+            <div class="patent-timeline">
+                <h3>Innovation Timeline</h3>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025</span>
+                    <span>Initial LucID-Core patent filed</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025</span>
+                    <span>5 additional patents across therapeutic areas (provisional filing)</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025</span>
+                    <span>12 patents covering platform technologies (provisional filing)</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-year">2025</span>
+                    <span>18+ patents establishing comprehensive IP protection (provisional filing)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="founder" class="founder">
+        <div class="container">
+            <div class="section-title">
+                <h2>Founder & CEO</h2>
+                <p class="section-subtitle">Dr. Afsaneh Taheri Kal-Koshvandi - Inventor of Bioluminescence-based Proximity Labeling</p>
+            </div>
+            
+            <div class="founder-content">
+                <div class="founder-image">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQE5O6Y8dXaG4w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719834861328?e=1730937600&v=beta&t=H8J9nFg6Q4F3v9z4Vzq2JdJ1u5TzGcJQq8_9h8Q9Q9Y" alt="Dr. Afsaneh Taheri Kal-Koshvandi">
+                </div>
+                <div class="founder-bio">
+                    <h3>Pioneering Synthetic Biology</h3>
+                    <p>Dr. Afsaneh Taheri Kal-Koshvandi is the visionary founder and CEO of Lucidix Inc., with extensive expertise in synthetic biology, proximity labeling technologies, and therapeutic development. Her groundbreaking research has led to the invention of <strong>Bioluminescence-based Proximity Labeling</strong>, a revolutionary technology that eliminates the need for external light sources and enables deep-tissue proteomic interrogation.</p>
+                    <p>With a strong background in molecular biology and biotechnology, Dr. Taheri has dedicated her career to developing novel approaches for precise biological engineering. Her work on light-free proximity labeling systems represents a significant advancement in the field, enabling applications previously not possible with conventional methods.</p>
+                    <p>Under her leadership, Lucidix has rapidly expanded its intellectual property portfolio with 18+ patent families and is positioned to transform multiple therapeutic areas through its modular technology platform.</p>
+                    
+                    <div class="founder-achievements">
+                        <div class="achievement-item">
+                            <div class="achievement-number">18+</div>
+                            <div class="achievement-text">Patent Families</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">3</div>
+                            <div class="achievement-text">Preprints Published</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">5+</div>
+                            <div class="achievement-text">Years Experience</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-number">1st</div>
+                            <div class="achievement-text">Inventor of Light-Free Proximity Labeling</div>
+                        </div>
+                    </div>
+                    
+                    <div class="founder-links">
+                        <a href="CV_Afsaneh_Taheri_Kal_Koshvandi.pdf" class="btn" download>Download Full CV</a>
+                        <a href="https://www.linkedin.com/in/afsaneh-taheri-kal-koshvandi-95ba93187/" class="btn btn-outline" target="_blank">LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Download Section -->
+    <section id="cv" class="cv-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Curriculum Vitae</h2>
+                <p class="section-subtitle">Download the complete CV of Dr. Afsaneh Taheri Kal-Koshvandi</p>
+            </div>
+            
+            <div class="cv-download-card">
+                <h3>Dr. Afsaneh Taheri Kal-Koshvandi</h3>
+                <p>Founder of Lucidix | Inventor of Light-Free Proximity Labeling</p>
+                
+                <div class="cv-preview">
+                    <h4>Key Highlights:</h4>
+                    <ul>
+                        <li>Founder & Principal Investigator at Lucidix Inc.</li>
+                        <li>Inventor of 18+ patent families in biotech and synthetic biology</li>
+                        <li>Ph.D. in Chemistry from Alzahra University, Tehran</li>
+                        <li>Expert in protein engineering, chemical proteomics, and proximity labeling</li>
+                        <li>Published in Nature-tier journals and preprints</li>
+                        <li>Developer of LucID-Core™ light-free biotinylation technology</li>
+                    </ul>
+                </div>
+                
+                <a href="CV_Afsaneh_Taheri_Kal_Koshvandi.pdf" class="btn" download style="margin-top: 20px;">
+                    <i class="fas fa-download"></i> Download Full CV (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="technology">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technology Modules</h2>
+                <p class="section-subtitle">Our platform of modular, interoperable technologies</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>LucID-Core™</h3>
+                    <p>The foundation of our platform—a light-free proximity labeling system that enables deep-tissue protein interaction mapping without external illumination.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>LuxArba™</h3>
+                    <p>Autonomous cancer vaccine platform that generates patient-specific neoantigens in response to tumor microenvironment signals.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>OvaSense™</h3>
+                    <p>Precision fertility monitoring system that provides real-time hormonal mapping with ±3-hour ovulation prediction accuracy.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>LucID-Vax™</h3>
+                    <p>Next-generation vaccine platform with built-in quality assurance and real-time efficacy monitoring.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>NeuroTrace™</h3>
+                    <p>Neural pathway mapping technology for precision neuroscience research and neurodegenerative disease treatment.</p>
+                </div>
+                
+                <div class="tech-card">
+                    <h3>SmartDegron™</h3>
+                    <p>Controlled protein degradation system for safety and temporal control of therapeutic interventions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Publications</h2>
+                <p class="section-subtitle">Our groundbreaking research in synthetic biology and theranostics</p>
+            </div>
+            
+            <div class="publications-list">
+                <div class="publication-item">
+                    <h3>Taheri Kal-Koshvandi, A. (2025).</h3>
+                    <p>LucID: A Self-Activating Bioluminescent Biotin Ligase for Light-Free Proximity Labeling in Deep Tissues. <em>bioRxiv</em>, 2025-06.</p>
+                    <a href="https://doi.org/10.1101/2025.06.10.658826" class="publication-link" target="_blank">https://doi.org/10.1101/2025.06.10.658826</a>
+                </div>
+                
+                <div class="publication-item">
+                    <h3>Kal-Koshvandi, A. T. (2025).</h3>
+                    <p>Quintuple BRET Platform for Light-Free, Compartment-Resolved Proximity Proteomics in Neurons.</p>
+                </div>
+                
+                <div class="publication-item">
+                    <h3>Kal-Koshvandi, A. T. (2025).</h3>
+                    <p>Original Development and Prior Disclosure of a Bioluminescence-Activated Proximity Labeling Platform Using Luciferase–Photosensitizer Conjugates (Documenting Scientific Priority and IP Ownership by Dr. Afsaneh Taheri Kal-Koshvandi).</p>
+                    <a href="https://doi.org/10.5281/zenodo.15554676" class="publication-link" target="_blank">https://doi.org/10.5281/zenodo.15554676</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patents Section -->
+    <section id="patents" class="patents">
+        <div class="container">
+            <div class="section-title">
+                <h2>Patent Portfolio</h2>
+                <p class="section-subtitle">18+ patents protecting our platform technologies (provisional filing in 2025)</p>
+            </div>
+            
+            <div class="patent-categories">
+                <div class="category-card">
+                    <h3>Cancer Theranostics</h3>
+                    <ul class="patent-list">
+                        <li>LucID-Core: Light-free proximity labeling</li>
+                        <li>LuxArba: Autonomous cancer vaccine platform</li>
+                        <li>Checkpoint LucID: Immune modulation technology</li>
+                        <li>TumorTrace: Precision cancer mapping</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <h3>Fertility Solutions</h3>
+                    <ul class="patent-list">
+                        <li>OvaSense: Hormonal mapping system</li>
+                        <li>FollicleTrack: Ovarian follicle monitoring</li>
+                        <li>EmbryoGuard: IVF quality assurance</li>
+                        <li>CycleSync: Precision cycle prediction</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <h3>Smart Vaccines</h3>
+                    <ul class="patent-list">
+                        <li>LucID-Vax: Self-validating vaccine platform</li>
+                        <li>ResponseTrack: Real-time immunity monitoring</li>
+                        <li>VectorFree: Non-viral delivery system</li>
+                        <li>TempStable: Thermostable formulation technology</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <h3>Neuro & Autoimmune</h3>
+                    <ul class="patent-list">
+                        <li>NeuroTrace: Neural pathway mapping</li>
+                        <li>SynapseID: Synaptic connection labeling</li>
+                        <li>ImmuneBalance: Autoimmune regulation</li>
+                        <li>BloodBrainPass: CNS delivery technology</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pipeline Section -->
+    <section id="pipeline" class="pipeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>Development Pipeline</h2>
+                <p class="section-subtitle">Strategic roadmap from research to commercialization</p>
+            </div>
+            
+            <div class="roadmap">
+                <div class="roadmap-phase">
+                    <div class="phase-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Preclinical (2025–2026)</h3>
+                    <p>OvaSense PoC completion</p>
+                    <p>LuxArba in vitro validation</p>
+                    <p>IND-enabling studies</p>
+                </div>
+                
+                <div class="roadmap-phase">
+                    <div class="phase-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Clinical (2027–2028)</h3>
+                    <p>Phase I–II trials</p>
+                    <p>First-in-human studies</p>
+                    <p>Partnership expansion</p>
+                </div>
+                
+                <div class="roadmap-phase">
+                    <div class="phase-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Commercial (2029+)</h3>
+                    <p>Diagnostics launch</p>
+                    <p>Therapeutics approval</p>
+                    <p>Platform licensing</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3>Let's Collaborate</h3>
+                <p>We're seeking strategic partnerships to accelerate development and commercialization.</p>
+                <p>Contact us at <a href="mailto:founder@lucidixinc.com" style="color: var(--cyan);">founder@lucidixinc.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p class="section-subtitle">Get in touch to explore collaboration opportunities</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <ul class="contact-methods">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>founder@lucidixinc.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Delaware, USA</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+98 930 852 0957</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/lucidix-inc/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/AfsanehTaheri96?t=ehl2mJSl6OQMb6Gip-MJ5Q&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.researchgate.net/profile/Afsaneh-Taheri-Kal-Koshvandi" target="_blank"><i class="fab fa-researchgate"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <div id="formSuccess" class="form-success">
+                        <p>Thank you for your message! We'll get back to you soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="logo.svg" alt="Lucidix Logo" class="logo-img">
+                    <!-- SVG Logo Embedded Directly -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+                        <defs>
+                            <linearGradient id="teal-grad-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#1DE9B6"/>
+                                <stop offset="100%" stop-color="#2AFC98"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Mitochondrion Structure -->
+                        <path d="M200,150 Q250,100 300,150 T400,150" fill="none" stroke="url(#teal-grad-footer)" stroke-width="4"/>
+                        <path d="M200,150 Q250,200 300,150 T400,150" fill="none" stroke="url(#teal-grad-footer)" stroke-width="4"/>
+                        
+                        <!-- BRET Energy Rings -->
+                        <circle cx="300" cy="150" r="40" fill="none" stroke="url(#teal-grad-footer)" stroke-width="2" opacity="0.7">
+                            <animate attributeName="r" values="40;60;40" dur="2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Synaptic Points -->
+                        <circle cx="230" cy="150" r="8" fill="url(#teal-grad-footer)"/>
+                        <circle cx="370" cy="150" r="8" fill="url(#teal-grad-footer)"/>
+                    </svg>
                     <span>Lucidix Inc.</span>
                 </div>
                 
@@ -485,6 +1364,36 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Contact Form Handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // Create mailto link
+            const subject = `Contact from ${name}`;
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+            
+            // Open email client
+            window.location.href = `mailto:founder@lucidixinc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Show success message
+            const successMessage = document.getElementById('formSuccess');
+            successMessage.style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(function() {
+                successMessage.style.display = 'none';
+            }, 5000);
         });
     </script>
 </body>
