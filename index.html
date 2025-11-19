@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucidix Inc. - The Biological AI Company</title>
+    <meta name="description" content="Lucidix Inc. - Pioneering Biological AI. Building the first self-learning AI-biology platform to create programmable intelligent organisms.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Add EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY_HERE"); // You'll need to get this from EmailJS
+        })();
+    </script>
+    
+    <style>
+        /* تمام استایل‌های قبلی اینجا میاد */
+        /* فقط قسمت فرم رو کمی بهینه می‌کنم */
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(15,23,42,0.5);
+            color: white;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
+            background: rgba(15,23,42,0.7);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-success {
+            display: none;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--emerald);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            color: var(--emerald);
+        }
+
+        .form-error {
+            display: none;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid #ef4444;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            color: #ef4444;
+        }
+
+        .btn-loading {
+            position: relative;
+            color: transparent;
+        }
+
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- تمام HTML قبلی اینجا میاد -->
+    <!-- فقط قسمت Contact Form رو عوض می‌کنم -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p class="section-subtitle">Get in touch to explore partnership and investment opportunities</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Connect With Us</h3>
+                    <ul class="contact-methods">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>afsanehtaheri6396@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Delaware, USA</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+98 930 852 0957</span>
+                        </li>
+                    </ul>
+                    
+                    <div style="margin-top: 30px; background: rgba(6, 182, 212, 0.1); padding: 20px; border-radius: 10px;">
+                        <h4 style="color: var(--cyan); margin-bottom: 10px;">For Investors</h4>
+                        <p style="font-size: 0.9rem; color: var(--slate-300);">
+                            Interested in our $30M seed round? Contact us directly for the complete investment deck and executive summary.
+                        </p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/lucidix-inc/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/AfsanehTaheri96?t=ehl2mJSl6OQMb6Gip-MJ5Q&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.researchgate.net/profile/Afsaneh-Taheri-Kal-Koshvandi" target="_blank"><i class="fab fa-researchgate"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="from_name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="from_email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="interest_type" class="form-control" required>
+                                <option value="">I'm interested in...</option>
+                                <option value="investment">Investment Opportunity</option>
+                                <option value="partnership">Strategic Partnership</option>
+                                <option value="collaboration">Research Collaboration</option>
+                                <option value="career">Career Opportunity</option>
+                                <option value="media">Media Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" id="submitBtn">
+                            Send Message
+                        </button>
+                    </form>
+                    <div id="formSuccess" class="form-success">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Thank you for your message! We'll get back to you within 24 hours.</p>
+                    </div>
+                    <div id="formError" class="form-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p>There was an error sending your message. Please email us directly at afsanehtaheri6396@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Contact Form with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('formSuccess');
+            const errorMessage = document.getElementById('formError');
+            
+            // Show loading state
+            submitBtn.classList.add('btn-loading');
+            submitBtn.disabled = true;
+            
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Send email using EmailJS
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    // Show error message
+                    errorMessage.style.display = 'block';
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                })
+                .finally(function() {
+                    // Reset button state
+                    submitBtn.classList.remove('btn-loading');
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // Alternative: Simple form that shows instruction
+        function showEmailInstruction() {
+            const form = document.getElementById('contactForm');
+            const name = form.from_name.value;
+            const email = form.from_email.value;
+            const interest = form.interest_type.value;
+            const message = form.message.value;
+            
+            if (!name || !email || !interest || !message) {
+                alert('Please fill all fields');
+                return;
+            }
+            
+            const instruction = `
+Please send an email to: afsanehtaheri6396@gmail.com
+
+With the following information:
+
+Name: ${name}
+Email: ${email}
+Interest: ${interest}
+
+Message:
+${message}
+
+We'll respond within 24 hours!
+            `;
+            
+            alert(instruction);
+            form.reset();
+        }
+    </script>
+</body>
+</html>
